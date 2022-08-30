@@ -34,27 +34,15 @@
 <div class="categories">
     <div class="container">
         <div class="cat-all my-5">
+            @foreach($categories as $category)
             <div class="cat-item text-center pb-2" style="border-bottom: 1px solid #ccc">
                 <div>
                     <img src="{{ asset('images/categories/mobile.jpg') }}" alt="">
                 </div>
-                <a href="" class="my-2 text-info" style="font-size: 30px" >Мобильные телефоны</a>
-                <small class="d-block">В этом разделе вы найдёте самые популярные мобильные телефоны по низким ценам</small>
+                <a href="/categories/{{ $category->code }}" class="my-2 text-info" style="font-size: 30px" >{{ $category->name }}</a>
+                <small class="d-block">{{ $category->description }}</small>
             </div>
-            <div class="cat-item text-center my-5 pb-2" style="border-bottom: 1px solid #ccc">
-                <div>
-                    <img src="{{ asset('images/categories/portable.jpg') }}" alt="">
-                </div>
-                <a href="" class="my-2 text-info" style="font-size: 30px" >Портативная техника</a>
-                <small class="d-block">Раздел с портативной техникой</small>
-            </div>
-            <div class="cat-item text-center pb-2" style="border-bottom: 1px solid #ccc">
-                <div>
-                    <img src="{{ asset('images/categories/appliance.jpg') }}" alt="">
-                </div>
-                <a href="" class="my-2 text-info" style="font-size: 30px" >Бытовая техника</a>
-                <small class="d-block">Раздел с бытовой техникой</small>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -35,14 +35,10 @@
 <div class="cards my-5">
     <div class="container">
         <h2 class="text-center">
-            @if($category == 'mobile')
-            Мобильные телефоны
-            @elseif($category == 'portable')
-                Портативная техника
-            @elseif($category == 'appliance')
-                Бытовая техника
-            @endif
+            {{ $category->name }}
         </h2>
+        <small class="text-center d-block mb-4">{{ $category->description }}</small>
+
         <div class="row">
             <div class="col-4 border text-center p-2">
                 <div>
